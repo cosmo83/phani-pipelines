@@ -12,4 +12,4 @@ jobs:
   plan:
   - get: phani-pipelines
   - task: create-infra
-    file: resource-tutorial/tasks/create-infra.yml
+    file: phani-pipelines/tasks/create-infra.yml
