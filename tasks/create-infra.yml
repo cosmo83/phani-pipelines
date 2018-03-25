@@ -8,3 +8,6 @@ image_resource:
 
 inputs:
 - name: phani-pipelines
+
+run:
+   echo "Hello Phani"
