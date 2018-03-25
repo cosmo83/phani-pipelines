@@ -1,0 +1,15 @@
+---
+resources:
+- name: resource-tutorial
+  type: git
+  source:
+    uri: https://github.com/cosmo83/phani-pipelines.git
+    branch: master
+
+jobs:
+- name: job-hello-world
+  public: true
+  plan:
+  - get: resource-tutorial
+  - task: hello-world
+    file: resource-tutorial/tasks/task_hello_world.yml
