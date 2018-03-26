@@ -10,4 +10,4 @@ inputs:
 - name: phani-pipelines
 
 run:
-   echo "Hello Phani"
+   /usr/bin/echo "Hello Phani"
