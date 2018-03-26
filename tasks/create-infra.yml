@@ -8,6 +8,7 @@ image_resource:
 
 inputs:
 - name: phani-pipelines
+- name: terraform-state
 
 outputs:
 - name: create-infrastructure-output
