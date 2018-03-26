@@ -1,6 +1,7 @@
 #!/bin/bash
 ROOT=$PWD
 set -eu
+ls -al terraform-state
 
 function main(){
 
