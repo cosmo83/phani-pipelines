@@ -21,3 +21,4 @@ jobs:
       OS_REGION_NAME: {{os_region_name}}
       OS_USER_DOMAIN_NAME: {{os_user_domain_name}}
       INFRA_DNS: {{infra_dns}}
+      PHANI_SUBNET_CIDR: {{phani_subnet_cidr}}
