@@ -13,6 +13,7 @@ resources:
     secret_access_key: {{minio_secret_access_key}}
     endpoint: {{minio_endpoint}}
     bucket: {{minio_output_bucket}}
+    regexp: terraform-(.*).tfstate
 
 
 jobs:
@@ -21,7 +22,7 @@ jobs:
   ensure:
     put: terraform-state
     params:
-      file: create-infrastructure-output/terraform.tfstate
+      file: create-infrastructure-output/terraform-0.1.tfstate
 
   plan:
   - get: phani-pipelines
