@@ -11,6 +11,6 @@ resource "openstack_networking_subnet_v2" "phani_subnet" {
   ip_version = 4
   enable_dhcp = true
   dns_nameservers = [
-    "10.181.227.181"
+    "{var.infra_dns}"
   ]
 }

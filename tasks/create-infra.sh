@@ -15,7 +15,6 @@ function main(){
    -var "os_domain_name=${OS_USER_DOMAIN_NAME}" \
    -var "infra_dns=${INFRA_DNS}" \
    -var "phani_subnet_cidr=${PHANI_SUBNET_CIDR}" \
-   -var "dynamic_services_dns=${DYNAMIC_SERVICES_DNS}" \
    -out "terraform.tfplan" \
    -state "terraform-state/terraform.tfstate" \
    "$ROOT/phani-pipelines/terraform"
