@@ -22,7 +22,7 @@ function main(){
 
 
   terraform apply \
-    -state-out "$ROOT/create-infrastructure-output/terraform.tfstate" \
+    -state-out "$ROOT/terraform-state/*.tfstate" \
     -parallelism=5 \
     terraform.tfplan
 
