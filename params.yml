@@ -8,6 +8,6 @@ os_password: crowbar
 os_auth_url: http://10.182.101.6:5000/v3/
 os_username: crowbar
 os_interface: public
-infra_dns: [10.181.227.181]
+infra_dns: 10.181.227.181
 phani_subnet_cidr: 192.168.143.0/24
 dynamic_services_dns: 10.181.227.181
