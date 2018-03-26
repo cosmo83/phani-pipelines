@@ -13,3 +13,10 @@ jobs:
   - get: phani-pipelines
   - task: create-infra
     file: phani-pipelines/tasks/create-infra.yml
+    params:
+      OS_PROJECT_NAME: {{os_project_name}}
+      OS_USERNAME: {{os_username}}
+      OS_PASSWORD: {{os_password}}
+      OS_AUTH_URL: {{os_auth_url}}
+      OS_REGION_NAME: {{os_region_name}}
+      OS_USER_DOMAIN_NAME: {{os_user_domain_name}}
