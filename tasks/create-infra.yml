@@ -10,4 +10,4 @@ inputs:
 - name: phani-pipelines
 
 run:
-   /usr/bin/echo "Hello Phani"
+  path: phani-pipelines/tasks/create-infra.sh 
