@@ -6,9 +6,23 @@ resources:
     uri: https://github.com/cosmo83/phani-pipelines.git
     branch: master
 
+- name: terraform-state
+  type: s3
+  source:
+    access_key_id: {{minio_access_key_id}}
+    secret_access_key: {{minio_secret_access_key}}
+    endpoint: {{minio_endpoint}}
+    bucket: {{minio_output_bucket}}
+
+
 jobs:
 - name: create-phani-infra
   public: true
+  ensure:
+    put: terraform-state
+    params:
+      file: create-infrastructure-output/terraform.tfstate
+
   plan:
   - get: phani-pipelines
   - task: create-infra

@@ -11,3 +11,12 @@ os_interface: public
 infra_dns: 10.181.227.181
 phani_subnet_cidr: 192.168.143.0/24
 dynamic_services_dns: 10.181.227.181
+
+
+### S3 Object Storage Details (Aka. Minio)
+minio_access_key_id: 8607cf0268e8afd102789e54950d840d
+minio_secret_access_key: 662845fed038cdd81e3cf6c44c647b01
+minio_bucket: pcf-openstack-artifact-cache-latest
+minio_endpoint: http://s3.sandbox.pc.innogy.com
+minio_output_bucket: pcf-sandbox-terraform
+
