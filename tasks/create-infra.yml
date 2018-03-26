@@ -21,7 +21,6 @@ params:
   OS_USER_DOMAIN_NAME:
   INFRA_DNS:
   PHANI_SUBNET_CIDR:
-  DYNAMIC_SERVICES_DNS:
 
 run:
   path: phani-pipelines/tasks/create-infra.sh 
