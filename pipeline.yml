@@ -15,16 +15,53 @@ resources:
     bucket: {{minio_output_bucket}}
     regexp: terraform-(.*).tfstate
 
+- name: tfstate-version
+  type: semver
+  source:
+    driver: s3
+    bucket: {{minio_output_bucket}}
+    key: terraform/version
+    access_key_id: {{minio_access_key_id}}
+    secret_access_key: {{minio_secret_access_key}}
+    endpoint: {{minio_endpoint}}
+    initial_version: 0.0.0
 
 jobs:
 - name: create-phani-infra
   public: true
   ensure:
-    put: terraform-state
-    params:
-      file: create-infrastructure-output/terraform-0.1.1.tfstate
+    do:
+    - task: create-versioned-terraform-state-file
+      config:
+        platform: linux
+        image_resource:
+          type: docker
+          source:
+            repository: czero/cflinuxfs2
+          inputs:
+          - name: terraform-state
+          - name: tfstate-version
+          outputs:
+          - name: versioned-terraform-state-file
+          run:
+            path: bash
+            args:
+            - -c
+            - |
+              version=$(cat tfstate-version/version)
+              cp terraform-state/terraform.tfstate versioned-terraform-state-file/terraform-$version.tfstate
+
+    - put: terraform-state
+      params:
+        file: versioned-terraform-state-file/*.tfstate
+
+    - put: tfstate-version
+      params:
+        file: tfstate-version/version
+
   plan:
   - get: terraform-state
+  - get: tfstate-version
   - get: phani-pipelines
   - task: create-infra
     file: phani-pipelines/tasks/create-infra.yml

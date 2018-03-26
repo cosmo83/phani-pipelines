@@ -17,12 +17,12 @@ function main(){
    -var "infra_dns=${INFRA_DNS}" \
    -var "phani_subnet_cidr=${PHANI_SUBNET_CIDR}" \
    -out "terraform.tfplan" \
-   -state "terraform-state/terraform-0.1.1.tfstate" \
+   -state "terraform-state/terraform.tfstate" \
    "$ROOT/phani-pipelines/terraform"
 
 
   terraform apply \
-    -state-out "$ROOT/create-infrastructure-output/terraform-0.1.1.tfstate" \
+    -state-out "$ROOT/create-infrastructure-output/terraform.tfstate" \
     -parallelism=5 \
     terraform.tfplan
 
