@@ -1,0 +1,12 @@
+### Openstack Sandbox Details
+os_project_id: 0bd7126c14b1416c9070a615782f66a9
+os_region_name: RegionOne
+os_user_domain_name: Default
+os_project_name: pcf
+os_identity_api_version: 3
+os_password: crowbar
+os_auth_url: http://10.182.101.6:5000/v3/
+os_username: crowbar
+os_interface: public
+infra_dns: 10.181.227.181
+phani_subnet_cidr: 192.168.143.0/24

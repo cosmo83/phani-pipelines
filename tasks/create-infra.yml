@@ -19,6 +19,8 @@ params:
   OS_AUTH_URL:
   OS_REGION_NAME:
   OS_USER_DOMAIN_NAME:
+  INFRA_DNS:
+  PHANI_SUBNET_CIDR:
 
 run:
   path: phani-pipelines/tasks/create-infra.sh 
