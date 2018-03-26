@@ -23,8 +23,8 @@ jobs:
     put: terraform-state
     params:
       file: create-infrastructure-output/terraform-0.1.tfstate
-
   plan:
+  - get: terraform-state
   - get: phani-pipelines
   - task: create-infra
     file: phani-pipelines/tasks/create-infra.yml
