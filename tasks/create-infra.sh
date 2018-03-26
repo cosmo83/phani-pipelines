@@ -17,7 +17,7 @@ function main(){
    -var "infra_dns=${INFRA_DNS}" \
    -var "phani_subnet_cidr=${PHANI_SUBNET_CIDR}" \
    -out "terraform.tfplan" \
-   -state "terraform-state/terraform.tfstate" \
+   -state "terraform-state/*.tfstate" \
    "$ROOT/phani-pipelines/terraform"
 
 

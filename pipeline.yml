@@ -35,21 +35,21 @@ jobs:
       config:
         platform: linux
         image_resource:
-          type: docker
+          type: docker-image
           source:
             repository: czero/cflinuxfs2
-          inputs:
+        inputs:
           - name: terraform-state
           - name: tfstate-version
-          outputs:
+        outputs:
           - name: versioned-terraform-state-file
-          run:
-            path: bash
-            args:
-            - -c
-            - |
-              version=$(cat tfstate-version/version)
-              cp terraform-state/terraform.tfstate versioned-terraform-state-file/terraform-$version.tfstate
+        run:
+          path: bash
+          args:
+          - -c
+          - |
+            version=$(cat tfstate-version/version)
+            cp terraform-state/terraform.tfstate versioned-terraform-state-file/terraform-$version.tfstate
 
     - put: terraform-state
       params:
