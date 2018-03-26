@@ -1,5 +1,5 @@
 resource "openstack_networking_network_v2" "phani_net" {
-  name = "${var.prefix}-infra-net"
+  name = "${var.prefix}-phani-net"
   region = "${var.os_region}"
   admin_state_up = "true"
 }
