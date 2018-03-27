@@ -3,6 +3,7 @@ ROOT=$PWD
 set -eu
 ls -al terraform-state/
 cp terraform-state/terraform-*.tfstate terraform-state/terraform.tfstate
+cat terraform-state/terraform.tfstate
 ls -al terraform-state/
 
 function main(){
@@ -32,3 +33,4 @@ function main(){
 main
 ls -al create-infrastructure-output
 ls -al terraform-state
+cat terrafom-state/terraform.tfstate
