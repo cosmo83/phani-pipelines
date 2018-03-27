@@ -2,7 +2,7 @@
 ROOT=$PWD
 set -eu
 ls -al terraform-state/
-cp terraform-state/terraform-*.tfstate terraform-state/
+cp terraform-state/terraform-*.tfstate terraform-state/terraform.tfstate
 
 function main(){
 
