@@ -30,4 +30,5 @@ function main(){
 
 }
 main
-ls -al 
+ls -al create-infrastructure-output
+ls -al terraform-state
