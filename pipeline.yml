@@ -49,7 +49,7 @@ jobs:
           - -c
           - |
             version=$(cat tfstate-version/version)
-            cp terraform-state/*.tfstate versioned-terraform-state-file/terraform-$version.tfstate
+            cp create-infrastructure-output/terraform.tfstate versioned-terraform-state-file/terraform-$version.tfstate
 
     - put: terraform-state
       params:

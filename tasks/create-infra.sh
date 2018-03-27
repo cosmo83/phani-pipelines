@@ -31,6 +31,3 @@ function main(){
 
 }
 main
-ls -al create-infrastructure-output
-ls -al terraform-state
-cat terrafom-state/terraform.tfstate
